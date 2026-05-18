@@ -9,22 +9,23 @@ export default function SignatureDrinks() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="bebidas" ref={ref} className="py-24 md:py-36 bg-dark-800 overflow-hidden">
+    <section id="bebidas" ref={ref} className="py-28 md:py-40 bg-dark-800 overflow-hidden">
       <div className="container-custom">
 
         {/* Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-24"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
           <span className="section-label text-warm-300">Para Entonarse</span>
-          <h2 className="section-title text-white mb-5">
+          <h2 className="section-title text-white mb-8">
             Nuestras Bebidas<br />Signature
           </h2>
-          <p className="font-sans text-sm text-white/40 max-w-md mx-auto">
-            Happy Hour todos los días desde las 17 hs. Creadas para el final de tarde y para quedarse.
+          <p className="font-sans text-sm text-white/40 max-w-md mx-auto leading-relaxed">
+            Happy Hour todos los días desde las 17 hs.<br />
+            Creadas para el final de tarde y para quedarse.
           </p>
         </motion.div>
 

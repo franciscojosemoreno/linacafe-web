@@ -3,7 +3,6 @@ import Hero from '@/components/Hero'
 import Menu from '@/components/Menu'
 import SignatureDrinks from '@/components/SignatureDrinks'
 import Gallery from '@/components/Gallery'
-import Reviews from '@/components/Reviews'
 import Location from '@/components/Location'
 import Footer from '@/components/Footer'
 
@@ -16,7 +15,6 @@ export default function Home() {
         <Menu />
         <SignatureDrinks />
         <Gallery />
-        <Reviews />
         <Location />
       </main>
       <Footer />
