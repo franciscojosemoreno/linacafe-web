@@ -101,6 +101,5 @@ export const siteConfig = {
 
   menuOnline: null,
 
-  petFriendly: true,
   sinTACC: true,
 }

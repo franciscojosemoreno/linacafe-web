@@ -7,7 +7,6 @@ export const images = {
     '/images/carousel-4.jpg',
   ],
   gallery: Array.from({ length: 12 }, (_, i) => `/images/gallery-${i + 1}.jpg`),
-  petFriendly: ['/images/pet-1.jpg', '/images/pet-2.jpg'],
   drinks: [
     '/images/drink-lafuerza.png',
     '/images/drink-copadevino.png',

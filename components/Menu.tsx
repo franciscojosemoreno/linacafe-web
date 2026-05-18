@@ -77,6 +77,17 @@ export default function Menu() {
           ))}
         </div>
 
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <a href="/menu.pdf" target="_blank" rel="noopener noreferrer" className="btn-lina">
+            Ver Menú Completo →
+          </a>
+        </motion.div>
+
       </div>
     </section>
   )
