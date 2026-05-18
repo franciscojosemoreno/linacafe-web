@@ -1,0 +1,26 @@
+export const images = {
+  logo: '/images/logo.png',
+  carousel: [
+    '/images/carousel-1.jpg',
+    '/images/carousel-2.jpg',
+    '/images/carousel-3.jpg',
+    '/images/carousel-4.jpg',
+  ],
+  gallery: Array.from({ length: 12 }, (_, i) => `/images/gallery-${i + 1}.jpg`),
+  petFriendly: ['/images/pet-1.jpg', '/images/pet-2.jpg'],
+  drinks: [
+    '/images/drink-lafuerza.png',
+    '/images/drink-copadevino.png',
+    '/images/drink-campari.png',
+    '/images/drink-fernet.png',
+    '/images/drink-aperol.png',
+    '/images/drink-gintonic.png',
+    '/images/drink-vermouth.png',
+    '/images/drink-cynar.png',
+    '/images/drink-pimms.png',
+    '/images/drink-negroni.png',
+    '/images/drink-artesano.png',
+    '/images/drink-lunfa.png',
+    '/images/drink-tinto.png',
+  ],
+}
