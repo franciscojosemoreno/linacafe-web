@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-dark-900 text-white antialiased;
+    @apply bg-lina-700 text-white antialiased;
   }
 }
 

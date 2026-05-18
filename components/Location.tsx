@@ -10,7 +10,7 @@ export default function Location() {
   const loc = siteConfig.location
 
   return (
-    <section id="locales" ref={ref} className="py-24 md:py-36 bg-white">
+    <section id="locales" ref={ref} className="py-24 md:py-36 bg-ivory-50">
       <div className="container-custom">
 
         <motion.div
@@ -20,13 +20,13 @@ export default function Location() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">Local</span>
-          <h2 className="section-title text-dark-900">
+          <h2 className="section-title text-lina-700">
             Encontranos
           </h2>
         </motion.div>
 
         <motion.div
-          className="border border-dark-900/10 overflow-hidden hover:border-lina-500/40 transition-colors max-w-3xl mx-auto"
+          className="border border-lina-700/15 overflow-hidden hover:border-lina-600/40 transition-colors max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -45,7 +45,7 @@ export default function Location() {
 
           {/* Info */}
           <div className="p-6 bg-white">
-            <h3 className="font-display font-black text-xl uppercase tracking-wide text-dark-900 mb-1">
+            <h3 className="font-display font-black text-xl uppercase tracking-wide text-lina-700 mb-1">
               {loc.name}
             </h3>
             <p className="font-sans text-sm text-lina-500 mb-4">
@@ -53,10 +53,10 @@ export default function Location() {
             </p>
 
             <div className="flex items-center gap-2 mb-2">
-              <svg className="w-4 h-4 text-dark-900/30 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 text-lina-700/30 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <p className="font-sans text-xs text-dark-900/50">{loc.hours}</p>
+              <p className="font-sans text-xs text-lina-700/60">{loc.hours}</p>
             </div>
 
             <div className="flex items-center gap-2 mb-6">

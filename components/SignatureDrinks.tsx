@@ -9,7 +9,7 @@ export default function SignatureDrinks() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="bebidas" ref={ref} className="py-24 md:py-36 bg-lina-500 overflow-hidden">
+    <section id="bebidas" ref={ref} className="py-24 md:py-36 bg-lina-600 overflow-hidden">
       <div className="container-custom">
 
         <motion.div

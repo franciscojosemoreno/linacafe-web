@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-dark-900/95 backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
+        scrolled ? 'bg-lina-700/95 backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
       }`}
     >
       <div className="container-custom flex items-center justify-between h-16 md:h-20">
@@ -46,7 +46,7 @@ export default function Navbar() {
             href="https://www.instagram.com/linacafepalermo/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-display font-bold text-xs tracking-[0.2em] uppercase px-5 py-2.5 border-2 border-lina-500 text-lina-500 hover:bg-lina-500 hover:text-white transition-all"
+            className="font-display font-bold text-xs tracking-[0.2em] uppercase px-5 py-2.5 border-2 border-white/50 text-white hover:bg-white hover:text-lina-700 transition-all"
           >
             Instagram
           </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-dark-800 border-t border-white/10 overflow-hidden"
+            className="md:hidden bg-lina-800 border-t border-white/10 overflow-hidden"
           >
             <div className="container-custom py-6 flex flex-col gap-5">
               {links.map((l) => (

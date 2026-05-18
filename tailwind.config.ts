@@ -21,6 +21,10 @@ const config: Config = {
           800: '#112B33',
           900: '#08161B',
         },
+        ivory: {
+          50:  '#F8F3EC',
+          100: '#F0E8DA',
+        },
         warm: {
           300: '#E8B48A',
           400: '#DC9F6A',
