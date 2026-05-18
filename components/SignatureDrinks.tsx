@@ -9,12 +9,12 @@ export default function SignatureDrinks() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="bebidas" ref={ref} className="py-28 md:py-40 bg-dark-800 overflow-hidden">
+    <section id="bebidas" ref={ref} className="py-32 md:py-48 bg-dark-800 overflow-hidden">
       <div className="container-custom">
 
         {/* Header */}
         <motion.div
-          className="text-center mb-24"
+          className="text-center mb-28"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -23,14 +23,14 @@ export default function SignatureDrinks() {
           <h2 className="section-title text-white mb-8">
             Nuestras Bebidas<br />Signature
           </h2>
-          <p className="font-sans text-sm text-white/40 max-w-md mx-auto leading-relaxed">
+          <p className="font-sans text-sm text-white/40 max-w-md mx-auto leading-loose text-center">
             Happy Hour todos los días desde las 17 hs.<br />
             Creadas para el final de tarde y para quedarse.
           </p>
         </motion.div>
 
         {/* 13 drinks grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-14 md:gap-x-8 md:gap-y-20">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-16 md:gap-x-10 md:gap-y-24">
           {siteConfig.signatureDrinks.map((drink, i) => (
             <motion.div
               key={drink.id}
@@ -39,9 +39,8 @@ export default function SignatureDrinks() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.05 + i * 0.07, ease: 'easeOut' }}
             >
-              {/* Drink image — transparent PNG floats on bg */}
-              <div className="relative w-full flex justify-center mb-6">
-                {/* Subtle glow behind drink */}
+              {/* Drink image */}
+              <div className="relative w-full flex justify-center mb-8">
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-12 bg-warm-500/15 rounded-full blur-2xl" />
                 <motion.img
                   src={drink.image}
@@ -52,10 +51,10 @@ export default function SignatureDrinks() {
               </div>
 
               {/* Accent line */}
-              <div className="w-6 h-0.5 bg-lina-500 mb-3" />
+              <div className="w-6 h-0.5 bg-lina-500 mb-5" />
 
               {/* Name */}
-              <h3 className="font-display font-black text-lg md:text-xl uppercase tracking-wide text-white mb-2 leading-tight">
+              <h3 className="font-display font-black text-lg md:text-xl uppercase tracking-wide text-white mb-3 leading-tight">
                 {drink.name}
               </h3>
 
@@ -69,13 +68,13 @@ export default function SignatureDrinks() {
 
         {/* Happy hour badge */}
         <motion.div
-          className="flex justify-center mt-20"
+          className="flex justify-center mt-24"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 1.2 }}
         >
-          <div className="border border-lina-500/40 px-8 py-5 text-center">
-            <p className="font-display font-black text-xs tracking-[0.25em] uppercase text-lina-400 mb-1">
+          <div className="border border-lina-500/40 px-12 py-7 text-center">
+            <p className="font-display font-black text-xs tracking-[0.25em] uppercase text-lina-400 mb-2">
               Happy Hour
             </p>
             <p className="font-serif italic text-white/60 text-sm">

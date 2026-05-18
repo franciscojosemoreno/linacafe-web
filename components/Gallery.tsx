@@ -9,11 +9,11 @@ export default function Gallery() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="galeria" ref={ref} className="py-24 md:py-36 bg-cream-100">
+    <section id="galeria" ref={ref} className="py-32 md:py-48 bg-cream-100">
       <div className="container-custom">
 
         <motion.div
-          className="text-center mb-14"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -24,7 +24,7 @@ export default function Gallery() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {images.gallery.map((src, i) => (
             <motion.div
               key={src}
@@ -37,7 +37,7 @@ export default function Gallery() {
                 src={src}
                 alt={`LINA CAFÉ ${i + 1}`}
                 className={`w-full object-cover hover:scale-105 transition-transform duration-700 ${
-                  i === 0 ? 'h-[400px] md:h-[500px]' : 'h-[180px] md:h-[220px]'
+                  i === 0 ? 'h-[420px] md:h-[520px]' : 'h-[190px] md:h-[240px]'
                 }`}
               />
             </motion.div>
