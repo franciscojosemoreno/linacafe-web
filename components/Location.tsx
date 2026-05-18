@@ -10,94 +10,72 @@ export default function Location() {
   const loc = siteConfig.location
 
   return (
-    <section id="locales" ref={ref} className="py-28 md:py-40 bg-cream-100">
+    <section id="locales" ref={ref} className="py-24 md:py-36 bg-dark-900">
       <div className="container-custom">
 
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-14"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Dónde estamos</span>
-          <h2 className="section-title text-dark-900">
-            Visitanos
+          <span className="section-label">Local</span>
+          <h2 className="section-title text-white">
+            Encontranos
           </h2>
         </motion.div>
 
-        {/* items-stretch hace que la tarjeta y el mapa tengan la misma altura */}
-        <div className="grid md:grid-cols-2 gap-0 items-stretch">
+        <motion.div
+          className="border border-white/10 overflow-hidden hover:border-lina-500/40 transition-colors max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          {/* Map */}
+          <div className="aspect-video bg-dark-700">
+            <iframe
+              src={loc.mapSrc}
+              className="w-full h-full grayscale opacity-80"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              title={loc.name}
+            />
+          </div>
 
-          {/* Info card */}
-          <motion.div
-            className="bg-white border border-dark-900/10 p-10 md:p-14 flex flex-col justify-between"
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div>
-              <h3 className="font-display font-black text-2xl uppercase tracking-wide text-dark-900 mb-10">
-                {loc.name}
-              </h3>
+          {/* Info */}
+          <div className="p-6">
+            <h3 className="font-display font-black text-xl uppercase tracking-wide text-white mb-1">
+              {loc.name}
+            </h3>
+            <p className="font-sans text-sm text-lina-400 mb-4">
+              {loc.address} · {loc.neighborhood}
+            </p>
 
-              <div className="flex flex-col gap-8">
-                {/* Address */}
-                <div>
-                  <p className="font-display font-bold text-[10px] tracking-[0.2em] uppercase text-lina-500 mb-2">
-                    Dirección
-                  </p>
-                  <p className="font-sans text-sm text-dark-900/70">{loc.address}</p>
-                  <p className="font-sans text-xs text-dark-900/40 mt-1">{loc.neighborhood}</p>
-                </div>
+            <div className="flex items-center gap-2 mb-2">
+              <svg className="w-4 h-4 text-white/30 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p className="font-sans text-xs text-white/40">{loc.hours}</p>
+            </div>
 
-                {/* Hours */}
-                <div>
-                  <p className="font-display font-bold text-[10px] tracking-[0.2em] uppercase text-lina-500 mb-2">
-                    Horarios
-                  </p>
-                  <p className="font-sans text-sm text-dark-900/70">{loc.hours}</p>
-                </div>
-
-                {/* Happy hour */}
-                <div>
-                  <p className="font-display font-bold text-[10px] tracking-[0.2em] uppercase text-warm-500 mb-2">
-                    Happy Hour
-                  </p>
-                  <p className="font-sans text-sm text-dark-900/70">{loc.happyHour}</p>
-                </div>
-              </div>
+            <div className="flex items-center gap-2 mb-6">
+              <svg className="w-4 h-4 text-lina-500/60 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+              <p className="font-sans text-xs text-lina-400">{loc.happyHour}</p>
             </div>
 
             <a
               href={loc.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-lina mt-12 inline-block self-start"
+              className="btn-lina text-xs py-3 px-5"
             >
-              Cómo llegar →
+              Cómo llegar
             </a>
-          </motion.div>
-
-          {/* Map — misma altura que la tarjeta */}
-          <motion.div
-            className="min-h-[420px] overflow-hidden"
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <iframe
-              src={loc.mapSrc}
-              width="100%"
-              height="100%"
-              style={{ border: 0, display: 'block', height: '100%', minHeight: '420px' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title={`Mapa ${loc.name}`}
-            />
-          </motion.div>
-
-        </div>
+          </div>
+        </motion.div>
 
       </div>
     </section>

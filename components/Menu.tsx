@@ -35,41 +35,41 @@ export default function Menu() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="menu" ref={ref} className="py-32 md:py-48 bg-cream-50">
+    <section id="menu" ref={ref} className="py-24 md:py-36 bg-dark-900">
       <div className="container-custom">
 
         <motion.div
-          className="text-center mb-24"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">Menú</span>
-          <h2 className="section-title text-dark-900 mb-8">
+          <h2 className="section-title text-white mb-4">
             Lo que hacemos
           </h2>
-          <p className="font-sans text-sm text-dark-900/40 max-w-sm mx-auto leading-loose text-center">
+          <p className="font-sans text-sm text-white/40 mt-4">
             Ingredientes de primera · Opciones veganas · Sin TACC
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.label}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-              className="border border-dark-900/10 p-10 md:p-12 hover:border-lina-500/50 transition-colors bg-white"
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
+              className="border border-white/10 p-6 hover:border-lina-500/50 transition-colors"
             >
-              <h3 className="font-display font-black text-base uppercase tracking-wide text-lina-500 mb-7">
+              <h3 className="font-display font-black text-lg uppercase tracking-wide text-lina-400 mb-5">
                 {cat.label}
               </h3>
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-2.5">
                 {cat.items.map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-lina-500 flex-none" />
-                    <span className="font-sans text-sm text-dark-900/60 leading-relaxed">{item}</span>
+                    <div className="w-1 h-1 rounded-full bg-lina-500 flex-none" />
+                    <span className="font-sans text-xs text-white/60">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -78,10 +78,10 @@ export default function Menu() {
         </div>
 
         <motion.div
-          className="text-center mt-20"
+          className="text-center mt-12"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >
           <a href="/menu.pdf" target="_blank" rel="noopener noreferrer" className="btn-lina">
             Ver Menú Completo →
