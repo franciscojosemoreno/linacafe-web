@@ -9,7 +9,7 @@ export default function Gallery() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="galeria" ref={ref} className="py-24 md:py-36 bg-dark-800">
+    <section id="galeria" ref={ref} className="py-24 md:py-36 bg-lina-500">
       <div className="container-custom">
 
         <motion.div
@@ -18,7 +18,7 @@ export default function Gallery() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Galería</span>
+          <span className="section-label text-white/60">Galería</span>
           <h2 className="section-title text-white">
             El Espacio
           </h2>

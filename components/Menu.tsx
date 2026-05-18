@@ -35,7 +35,7 @@ export default function Menu() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="menu" ref={ref} className="py-24 md:py-36 bg-dark-900">
+    <section id="menu" ref={ref} className="py-24 md:py-36 bg-white">
       <div className="container-custom">
 
         <motion.div
@@ -45,10 +45,10 @@ export default function Menu() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">Menú</span>
-          <h2 className="section-title text-white mb-4">
+          <h2 className="section-title text-dark-900 mb-4">
             Lo que hacemos
           </h2>
-          <p className="font-sans text-sm text-white/40 mt-4">
+          <p className="font-sans text-sm text-dark-900/40 mt-4">
             Ingredientes de primera · Opciones veganas · Sin TACC
           </p>
         </motion.div>
@@ -60,16 +60,16 @@ export default function Menu() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-              className="border border-white/10 p-6 hover:border-lina-500/50 transition-colors"
+              className="border border-dark-900/10 p-6 hover:border-lina-500/50 transition-colors"
             >
-              <h3 className="font-display font-black text-lg uppercase tracking-wide text-lina-400 mb-5">
+              <h3 className="font-display font-black text-lg uppercase tracking-wide text-lina-500 mb-5">
                 {cat.label}
               </h3>
               <ul className="flex flex-col gap-2.5">
                 {cat.items.map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-1 h-1 rounded-full bg-lina-500 flex-none" />
-                    <span className="font-sans text-xs text-white/60">{item}</span>
+                    <span className="font-sans text-xs text-dark-900/60">{item}</span>
                   </li>
                 ))}
               </ul>

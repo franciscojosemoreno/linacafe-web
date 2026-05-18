@@ -10,7 +10,7 @@ export default function Location() {
   const loc = siteConfig.location
 
   return (
-    <section id="locales" ref={ref} className="py-24 md:py-36 bg-dark-900">
+    <section id="locales" ref={ref} className="py-24 md:py-36 bg-white">
       <div className="container-custom">
 
         <motion.div
@@ -20,22 +20,22 @@ export default function Location() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">Local</span>
-          <h2 className="section-title text-white">
+          <h2 className="section-title text-dark-900">
             Encontranos
           </h2>
         </motion.div>
 
         <motion.div
-          className="border border-white/10 overflow-hidden hover:border-lina-500/40 transition-colors max-w-3xl mx-auto"
+          className="border border-dark-900/10 overflow-hidden hover:border-lina-500/40 transition-colors max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           {/* Map */}
-          <div className="aspect-video bg-dark-700">
+          <div className="aspect-video">
             <iframe
               src={loc.mapSrc}
-              className="w-full h-full grayscale opacity-80"
+              className="w-full h-full"
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
@@ -44,26 +44,26 @@ export default function Location() {
           </div>
 
           {/* Info */}
-          <div className="p-6">
-            <h3 className="font-display font-black text-xl uppercase tracking-wide text-white mb-1">
+          <div className="p-6 bg-white">
+            <h3 className="font-display font-black text-xl uppercase tracking-wide text-dark-900 mb-1">
               {loc.name}
             </h3>
-            <p className="font-sans text-sm text-lina-400 mb-4">
+            <p className="font-sans text-sm text-lina-500 mb-4">
               {loc.address} · {loc.neighborhood}
             </p>
 
             <div className="flex items-center gap-2 mb-2">
-              <svg className="w-4 h-4 text-white/30 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 text-dark-900/30 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <p className="font-sans text-xs text-white/40">{loc.hours}</p>
+              <p className="font-sans text-xs text-dark-900/50">{loc.hours}</p>
             </div>
 
             <div className="flex items-center gap-2 mb-6">
               <svg className="w-4 h-4 text-lina-500/60 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
               </svg>
-              <p className="font-sans text-xs text-lina-400">{loc.happyHour}</p>
+              <p className="font-sans text-xs text-lina-500">{loc.happyHour}</p>
             </div>
 
             <a
